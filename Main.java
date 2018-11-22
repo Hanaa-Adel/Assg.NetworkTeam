@@ -68,6 +68,8 @@ public class NetAss1 {
             outFile.close();
         }
    }
+ 
+ 
  /////////////////////Verina-Alber//////////////////////// 
  
   public static String LongDiv( String message, String func ){
@@ -114,7 +116,7 @@ public class NetAss1 {
         else                      d.setCharAt(4,'0');
             
         return(d);
-    
+  
     }
     
 
@@ -143,6 +145,4 @@ public class NetAss1 {
         Scanner var = new Scanner(System.in);
         String s=var.nextLine(); 
     }
-    
-
 }
