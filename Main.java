@@ -5,10 +5,71 @@
  */
 package ass1;
 
-/**
- *
- * @author 1400990
- */
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import sun.applet.Main;
+
+
+
+
+public class NetAss1 {
+ //////////////////////Hanaa-Adel////////////////////////////////
+    private static String readFile(File fileName) throws IOException {
+        String filename = "input.txt";
+        BufferedReader br = new BufferedReader(new FileReader(new File (filename)));
+          
+        try {
+            StringBuilder sb = new StringBuilder();
+            String line = br.readLine();
+
+            while (line != null) {
+                sb.append(line);
+                sb.append("\n");
+                line = br.readLine();
+            }
+            return sb.toString();
+        } finally {
+            br.close();
+        }
+    }
+     public static void Generator(String message, String func) throws IOException 
+   {
+        String messagetemp=message;
+        for (int i = 0; i < func.length()-1; i++)   messagetemp+="0";
+        String m = LongDiv(messagetemp,func);
+        for (int i = 0; i < func.length()-1-m.length(); i++)        message+="0";
+          
+        
+        ArrayList<String> list = new ArrayList();
+        list.add(message+m);
+        list.add(func);
+        PrintWriter out = null;
+        FileOutputStream outFile = null;
+        try{
+            outFile = new FileOutputStream("output.txt");
+            out = new PrintWriter(outFile);
+           for(String s:list){
+               out.println(s);
+           }
+        }
+        catch(IOException ex){
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE,null,ex);
+        }
+        finally{
+            out.close();
+            outFile.close();
+        }
+   }
+/////////////////////Marina-Saad////////////////////////    
+    
 public class Main {
 
     /**
@@ -18,4 +79,5 @@ public class Main {
         // TODO code application logic here
     }
     
+}
 }
