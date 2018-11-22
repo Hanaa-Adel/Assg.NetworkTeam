@@ -88,7 +88,22 @@ public class NetAss1 {
         return m;
     }
  
- 
+  public static String Verifier(String message, String func)
+    {
+       String m = LongDiv(message,func); 
+        if(Integer.parseInt(m)==0)    return("message is true");
+        else            return("message is false");
+    }
+   
+   
+    public static StringBuilder Alter(String message,int index) {      
+        StringBuilder d = new StringBuilder(message);  
+        if(message.charAt(index)=='0')         d.setCharAt(4,'1');
+        else                      d.setCharAt(4,'0');
+            
+        return(d);
+    
+    }
  
  
  
