@@ -94,7 +94,15 @@ public class NetAss1 {
  
  
  
-/////////////////////Marina-Saad////////////////////////    
+/////////////////////Marina-Saad////////////////////////   
+ public static StringBuilder Alter(String message,int index) {      
+        StringBuilder d = new StringBuilder(message);  
+        if(message.charAt(index)=='0')         d.setCharAt(4,'1');
+        else                      d.setCharAt(4,'0');
+            
+        return(d);
+    
+    }
     
 public class Main {
 
