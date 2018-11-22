@@ -70,7 +70,30 @@ public class NetAss1 {
             outFile.close();
         }
    }
+ /////////////////////Verina-Alber//////////////////////// 
+ 
+  public static String LongDiv( String message, String func ){
+        String m ="";    int mint;
+        for(char x:message.toCharArray()){
+            m=m+x;
+            if(m.length()==func.length()){
+                StringBuilder sb = new StringBuilder();
+                for(int i = 0; i < func.length(); i++)
+                sb.append((func.charAt(i) ^ m.charAt(i)));
+                m = sb.toString(); 
+                mint=Integer.parseInt(m); 
+                m=Integer.toString(mint);
+                if(m.equals("0")) m="";
+            }    
+        }
     
+        return m;
+    }
+ 
+ 
+ 
+ 
+ 
 /////////////////////Marina-Saad////////////////////////    
     
 public class Main {
