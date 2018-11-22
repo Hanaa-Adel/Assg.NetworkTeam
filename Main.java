@@ -16,11 +16,9 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import static netass1.NetAss1.Alter;
-import static netass1.NetAss1.Generator;
-import static netass1.NetAss1.LongDiv;
-import static netass1.NetAss1.Verifier;
 import sun.applet.Main;
+
+
 public class NetAss1 {
  //////////////////////Hanaa-Adel////////////////////////////////
    private static String readFile(File fileName,String filename) throws IOException {
@@ -104,14 +102,32 @@ public class NetAss1 {
     
     }
     
-public class Main {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
+      public static void main(String[] args) throws IOException {
+        String TorF;
+        System.out.println("Generator < File | Verifier");
+        String inputText;
+        inputText = readFile(new File ("src\\\\input.txt"),"input.txt");
+        String LinesofG[] = inputText.split("\\r?\\n");
+        Generator(LinesofG[0],LinesofG[1]);
+        
+        String outputText;
+        outputText = readFile(new File ("src\\\\output.txt"),"output.txt");
+        String LinesofV[] = outputText.split("\\r?\\n");
+        TorF = Verifier(LinesofV[0],LinesofV[1]);
+        System.out.println(TorF);
+        
+        
+        System.out.println("Generator < File | Alter 4 | Verifier");
+        StringBuilder test = Alter(LinesofV[0],4);
+        String t =test.toString();
+        TorF = Verifier(t,LinesofV[1]);
+        System.out.println(TorF);
+        
+        System.out.println("press space to exit");
+        Scanner var = new Scanner(System.in);
+        String s=var.nextLine(); 
     }
     
-}
+
 }
