@@ -1,0 +1,1 @@
+You must put the input file.txt with the name "input.txt" in the same folder with the executable file "NetAssignment_CRC.exe" .
