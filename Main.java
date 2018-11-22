@@ -3,7 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ass1;
+package netass1;
+
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -15,15 +16,15 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import static netass1.NetAss1.Alter;
+import static netass1.NetAss1.Generator;
+import static netass1.NetAss1.LongDiv;
+import static netass1.NetAss1.Verifier;
 import sun.applet.Main;
-
-
-
-
 public class NetAss1 {
  //////////////////////Hanaa-Adel////////////////////////////////
-    private static String readFile(File fileName) throws IOException {
-        String filename = "input.txt";
+   private static String readFile(File fileName,String filename) throws IOException {
+        
         BufferedReader br = new BufferedReader(new FileReader(new File (filename)));
           
         try {
@@ -40,6 +41,7 @@ public class NetAss1 {
             br.close();
         }
     }
+    
      public static void Generator(String message, String func) throws IOException 
    {
         String messagetemp=message;
@@ -68,6 +70,7 @@ public class NetAss1 {
             outFile.close();
         }
    }
+    
 /////////////////////Marina-Saad////////////////////////    
     
 public class Main {
